@@ -5,9 +5,12 @@ using LeetCOde;
 var easy = new Easy();
 Console.WriteLine("Hello, World!");
 
-foreach (var item in easy.TwoSum(new int[] { 3, 2, 4 }, 6))
+/*
+  foreach (var item in easy.TwoSum(new int[] { 3, 2, 4 }, 6))
     Console.WriteLine(item);
+*/
 
+Console.WriteLine(easy.RomanToInt("LVIII"));
 Console.ReadLine();
 
 

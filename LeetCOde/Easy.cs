@@ -10,5 +10,30 @@
                         return new int[] { i, j };
             return new int[] { -1, -1 };
         }
+
+        internal int RomanToInt(string s)
+        {
+            var d = new Dictionary<char, int>();
+            d.Add('I', 1);
+            d.Add('V', 5);
+            d.Add('X', 10);
+            d.Add('L', 50);
+            d.Add('C', 100);
+            d.Add('D', 500);
+            d.Add('M', 1000);
+
+            var list = new List<int>();
+            foreach (var c in s)
+            {
+                list.Add(d[c]);
+
+                if (list.Count > 1)
+                    if (list[list.Count - 2] < d[c])
+                        list[list.Count - 2] *= -1;
+            }
+
+
+            return list.Sum();
+        }
     }
 }
