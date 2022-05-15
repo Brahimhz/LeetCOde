@@ -35,5 +35,31 @@
 
             return list.Sum();
         }
+
+        public string LongestCommonPrefix(string[] strs)
+        {
+            string result = "";
+            int count = 0;
+
+            foreach (var c in strs[0])
+            {
+                try
+                {
+                    foreach (var s in strs)
+                        if (c != s[count]) return result;
+
+                    result += c;
+                    count++;
+                }
+                catch { return result; }
+
+            }
+
+
+            return result;
+
+        }
+
+
     }
 }

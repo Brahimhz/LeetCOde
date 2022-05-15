@@ -10,7 +10,14 @@ Console.WriteLine("Hello, World!");
     Console.WriteLine(item);
 */
 
-Console.WriteLine(easy.RomanToInt("LVIII"));
+//Console.WriteLine(easy.RomanToInt("LVIII"));
+
+
+Console.WriteLine(easy.LongestCommonPrefix(new string[] { "flower", "flow", "flight" }));
+
+
+
+
 Console.ReadLine();
 
 
