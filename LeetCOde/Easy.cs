@@ -60,6 +60,42 @@
 
         }
 
+        public bool IsPalindrome(int x)
+        {
+            return String.Join("", x.ToString().Reverse().Select(c => c.ToString())) == x.ToString();
+        }
+
+        public bool IsValid(string s)
+        {
+            Dictionary<char, char> _pairs = new Dictionary<char, char>
+            {
+                { '(', ')' },
+                { '[', ']' },
+                { '{', '}' },
+            };
+            if (s.Count() == 0) { return true; }
+
+            Stack<char> brackets = new Stack<char>();
+
+            foreach (char i in s)
+            {
+                if (_pairs.ContainsKey(i))
+                {
+                    brackets.Push(i);
+                }
+                else if (_pairs.Values.Contains(i))
+                {
+                    if (brackets.Count == 0) return false;
+
+                    var openingBracket = brackets.Pop();
+                    if (_pairs[openingBracket] != i)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return brackets.Count == 0;
+        }
 
     }
 }

@@ -13,8 +13,12 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine(easy.RomanToInt("LVIII"));
 
 
-Console.WriteLine(easy.LongestCommonPrefix(new string[] { "flower", "flow", "flight" }));
+//Console.WriteLine(easy.LongestCommonPrefix(new string[] { "flower", "flow", "flight" }));
 
+
+//Console.WriteLine(easy.IsPalindrome(10));
+
+Console.WriteLine(easy.IsValid("([)]{}"));
 
 
 
