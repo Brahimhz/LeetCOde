@@ -18,7 +18,10 @@ Console.WriteLine("Hello, World!");
 
 //Console.WriteLine(easy.IsPalindrome(10));
 
-Console.WriteLine(easy.IsValid("([)]{}"));
+
+var ary = new int[] { 1, 1, 2 };
+Console.WriteLine(easy.RemoveDuplicates(ary));
+
 
 
 

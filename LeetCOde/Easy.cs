@@ -96,6 +96,20 @@
             }
             return brackets.Count == 0;
         }
+        public int RemoveDuplicates(int[] nums)
+        {
+            if (nums.Length <= 1) return nums.Length;
+            var index = 1;
+            for (var i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] != nums[index - 1])
+                {
+                    nums[index] = nums[i];
+                    index++;
+                }
+            }
+            return index;
+        }
 
     }
 }
