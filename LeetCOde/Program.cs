@@ -19,11 +19,11 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine(easy.IsPalindrome(10));
 
 
-var ary = new int[] { 1, 1, 2 };
-Console.WriteLine(easy.RemoveDuplicates(ary));
+//var ary = new int[] { 1, 1, 2 };
+//Console.WriteLine(easy.RemoveDuplicates(ary));
 
-
-
+var ary = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
+Console.WriteLine(easy.RemoveElement(ary, 2));
 
 Console.ReadLine();
 

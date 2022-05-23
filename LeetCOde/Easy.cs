@@ -111,5 +111,21 @@
             return index;
         }
 
+        public int RemoveElement(int[] nums, int val)
+        {
+            var numsLength = nums.Length;
+            if (numsLength == 0 || nums == null) return 0;
+            var index = 0;
+            for (var i = 0; i < numsLength; i++)
+            {
+                if (nums[i] != val)
+                {
+                    nums[index] = nums[i];
+                    index++;
+                }
+            }
+            return index;
+        }
+
     }
 }
