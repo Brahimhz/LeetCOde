@@ -152,6 +152,28 @@
             } while (slow != fast);
             return true;
         }
+
+        public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+        {
+
+            if (headA == null || headB == null) return null;
+
+            while (headA != null)
+            {
+                var b = headB;
+
+                while (b != null)
+                {
+                    if (headA == b) return b;
+
+                    b = b.next;
+                }
+                headA = headA.next;
+            }
+
+
+            return null;
+        }
     }
 
     public class ListNode
