@@ -174,6 +174,52 @@
 
             return null;
         }
+
+        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        {
+
+            if (list1 == null && list2 == null) return null;
+
+            var stack = new Stack<int>();
+            while (list1 != null || list2 != null)
+            {
+                if (list1 != null && list2 != null)
+                    if (list1.val <= list2.val)
+                    {
+                        stack.Push(list1.val);
+                        list1 = list1.next;
+                        continue;
+                    }
+                    else
+                    {
+                        stack.Push(list2.val);
+                        list2 = list2.next;
+                        continue;
+                    }
+                else
+                {
+                    if (list2 == null)
+                    {
+                        stack.Push(list1.val);
+                        list1 = list1.next;
+                        continue;
+                    }
+                    if (list1 == null)
+                    {
+                        stack.Push(list2.val);
+                        list2 = list2.next;
+                        continue;
+                    }
+                }
+            }
+
+            ListNode merged = null;
+            foreach (var item in stack)
+                merged = new ListNode(item, merged);
+
+
+            return merged;
+        }
     }
 
     public class ListNode
@@ -184,6 +230,11 @@
         {
             val = x;
             next = null;
+        }
+        public ListNode(int val = 0, ListNode next = null)
+        {
+            this.val = val;
+            this.next = next;
         }
     }
 }
