@@ -138,5 +138,30 @@
 
             nums2.CopyTo(nums, 0);
         }
+
+        public bool HasCycle(ListNode head)
+        {
+            if (head == null) return false;
+            ListNode fast = head;
+            ListNode slow = head;
+            do
+            {
+                if (fast.next == null || fast.next.next == null) return false;
+                slow = slow.next;
+                fast = fast.next.next;
+            } while (slow != fast);
+            return true;
+        }
+    }
+
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int x)
+        {
+            val = x;
+            next = null;
+        }
     }
 }
