@@ -220,6 +220,36 @@
 
             return merged;
         }
+
+        public ListNode MiddleNode(ListNode head)
+        {
+            if (head == null) return head;
+
+            var stack = new Stack<int>();
+
+            var count = 0;
+
+            while (head != null)
+            {
+                stack.Push(head.val);
+                head = head.next;
+                count++;
+            }
+
+            if (count % 2 != 0) count = (count / 2) + 1;
+            else count /= 2;
+
+            ListNode result = null;
+            foreach (var item in stack)
+            {
+                if (count == 0) return result;
+
+                result = new ListNode(item, result);
+                count--;
+            }
+
+            return result;
+        }
     }
 
     public class ListNode
