@@ -250,6 +250,27 @@
 
             return result;
         }
+
+        public ListNode RemoveElements(ListNode head, int val)
+        {
+
+            if (head == null) return null;
+
+            var stack = new Stack<int>();
+
+            while (head != null)
+            {
+                if (head.val != val) stack.Push(head.val);
+                head = head.next;
+            }
+
+            ListNode result = null;
+            foreach (var item in stack)
+                result = new ListNode(item, result);
+
+            return result;
+
+        }
     }
 
     public class ListNode
