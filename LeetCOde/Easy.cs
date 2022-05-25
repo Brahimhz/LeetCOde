@@ -296,6 +296,37 @@
             }
             return result;
         }
+        public void MoveZeroes(int[] nums)
+        {
+            if (nums.Length > 1)
+            {
+                int zeroIndex = 0;
+                int noZeroIndex = 1;
+
+                while (noZeroIndex < nums.Length)
+                {
+                    if (nums[zeroIndex] == 0)
+                        if (nums[noZeroIndex] != 0)
+                        {
+                            var temp = nums[zeroIndex];
+                            nums[zeroIndex] = nums[noZeroIndex];
+                            nums[noZeroIndex] = temp;
+
+                            zeroIndex++;
+                            noZeroIndex++;
+                        }
+                        else
+                            noZeroIndex++;
+                    else
+                    {
+                        zeroIndex++;
+                        noZeroIndex++;
+                    }
+
+
+                }
+            }
+        }
     }
 
     public class ListNode
