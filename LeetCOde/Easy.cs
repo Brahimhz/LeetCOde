@@ -327,6 +327,29 @@
                 }
             }
         }
+
+        public string RemoveOuterParentheses(string s)
+        {
+            if (s.Length < 2) return "";
+
+            var count = 0;
+            var result = "";
+
+            foreach (var c in s)
+            {
+                if (c == '(' && count == 0) { count++; continue; }
+                if (c == '(' && count > 0) { result += c.ToString(); count++; continue; }
+
+                if (c == ')' && count == 1) { count--; continue; }
+                if (c == ')' && count > 1) { result += c.ToString(); count--; continue; }
+            }
+
+            return result;
+        }
+
+
+
+
     }
 
     public class ListNode

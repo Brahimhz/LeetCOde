@@ -22,10 +22,12 @@ Console.WriteLine("Hello, World!");
 //var ary = new int[] { 1, 1, 2 };
 //Console.WriteLine(easy.RemoveDuplicates(ary));
 
-var ary = new int[] { 1, 2 };
+//var ary = new int[] { 1, 2 };
 //Console.WriteLine(easy.RemoveElement(ary, 2));
 
-easy.Rotate(ary, 3);
+//easy.Rotate(ary, 3);
+
+Console.WriteLine(easy.RemoveOuterParentheses("()()"));
 
 Console.ReadLine();
 
