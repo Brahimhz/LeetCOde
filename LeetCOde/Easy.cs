@@ -347,7 +347,25 @@
             return result;
         }
 
+        public bool BackspaceCompare(string s, string t)
+        {
+            return ApplyBackSpace(s) == ApplyBackSpace(t);
+        }
 
+        private string ApplyBackSpace(string s)
+        {
+            var result = "";
+            foreach (var c in s)
+                if (c == '#')
+                {
+                    if (result.Length > 0)
+                        result = result.Remove(result.Length - 1);
+
+                }
+                else
+                    result += c.ToString();
+            return result;
+        }
 
 
     }

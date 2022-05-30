@@ -27,7 +27,9 @@ Console.WriteLine("Hello, World!");
 
 //easy.Rotate(ary, 3);
 
-Console.WriteLine(easy.RemoveOuterParentheses("()()"));
+//Console.WriteLine(easy.RemoveOuterParentheses("()()"));
+
+Console.WriteLine(easy.BackspaceCompare("ab#c", "ad#c"));
 
 Console.ReadLine();
 
