@@ -1,4 +1,6 @@
-﻿namespace LeetCOde
+﻿using System.Text;
+
+namespace LeetCOde
 {
     public class Easy
     {
@@ -365,6 +367,23 @@
                 else
                     result += c.ToString();
             return result;
+        }
+
+
+        public string RemoveDuplicates(string s)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var ch in s)
+            {
+                if (sb.Length > 0 && sb[sb.Length - 1] == ch)
+                    sb.Remove(sb.Length - 1, 1);
+                else
+                    sb.Append(ch);
+            }
+
+            return sb.ToString();
+
         }
 
 
