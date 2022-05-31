@@ -29,7 +29,9 @@ Console.WriteLine("Hello, World!");
 
 //Console.WriteLine(easy.RemoveOuterParentheses("()()"));
 
-Console.WriteLine(easy.BackspaceCompare("ab#c", "ad#c"));
+//Console.WriteLine(easy.BackspaceCompare("ab#c", "ad#c"));
+
+Console.WriteLine(easy.ContainsDuplicate(new int[] { 1, 1, 2 }));
 
 Console.ReadLine();
 
