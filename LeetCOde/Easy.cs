@@ -356,6 +356,35 @@ namespace LeetCOde
             return nums.Length != nums.Distinct().Count();
         }
 
+        public bool IsAnagram(string s, string t)
+        {
+
+            if (s == null || t == null) return false;
+            if (s.Length != t.Length) return false;
+
+            var dicS = stringDic(s);
+            var dicT = stringDic(t);
+
+            foreach (var ds in dicS)
+                if (!dicT.ContainsKey(ds.Key)) return false;
+                else if (dicT[ds.Key] != ds.Value) return false;
+
+
+            return true;
+
+        }
+
+        private Dictionary<char, int> stringDic(string s)
+        {
+            var dic = new Dictionary<char, int>();
+            foreach (var c in s)
+                if (dic.ContainsKey(c))
+                    dic[c]++;
+                else
+                    dic.Add(c, 1);
+            return dic;
+        }
+
 
     }
 

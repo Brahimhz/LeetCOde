@@ -31,7 +31,10 @@ Console.WriteLine("Hello, World!");
 
 //Console.WriteLine(easy.BackspaceCompare("ab#c", "ad#c"));
 
-Console.WriteLine(easy.ContainsDuplicate(new int[] { 1, 1, 2 }));
+//Console.WriteLine(easy.ContainsDuplicate(new int[] { 1, 1, 2 }));
+
+
+Console.WriteLine(easy.IsAnagram("anagsram", "nagaram"));
 
 Console.ReadLine();
 
