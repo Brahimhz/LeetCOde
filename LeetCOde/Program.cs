@@ -3,6 +3,7 @@
 using LeetCOde;
 
 var easy = new Easy();
+var medium = new Medium();
 Console.WriteLine("Hello, World!");
 
 /*
@@ -25,7 +26,7 @@ Console.WriteLine("Hello, World!");
 //var ary = new int[] { 1, 2 };
 //Console.WriteLine(easy.RemoveElement(ary, 2));
 
-//easy.Rotate(ary, 3);
+//medium.Rotate(ary, 3);
 
 //Console.WriteLine(easy.RemoveOuterParentheses("()()"));
 
@@ -34,7 +35,19 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine(easy.ContainsDuplicate(new int[] { 1, 1, 2 }));
 
 
-Console.WriteLine(easy.IsAnagram("anagsram", "nagaram"));
+//Console.WriteLine(easy.IsAnagram("anagsram", "nagaram"));
+//Console.WriteLine(medium.FrequencySort("tree"));
+
+
+
+LRUCache l = new LRUCache(2);
+l.Put(2, 1);
+l.Put(2, 2);
+Console.WriteLine(l.Get(2));
+l.Put(1, 1);
+l.Put(4, 1);
+Console.WriteLine(l.Get(2));
+
 
 Console.ReadLine();
 
