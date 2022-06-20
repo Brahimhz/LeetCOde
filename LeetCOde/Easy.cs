@@ -385,6 +385,32 @@ namespace LeetCOde
             return dic;
         }
 
+        public int[] Intersect(int[] nums1, int[] nums2)
+        {
+            if (nums2.Length < nums1.Length) return Intersect(nums2, nums1);
+
+            var counts = new Dictionary<int, int>();
+            foreach (var num in nums1)
+            {
+                if (!counts.ContainsKey(num))
+                    counts[num] = 1;
+                else
+                    counts[num]++;
+            }
+
+            var result = new List<int>();
+            foreach (var num in nums2)
+            {
+                if (counts.ContainsKey(num) && counts[num] > 0)
+                {
+                    result.Add(num);
+                    counts[num]--;
+                }
+            }
+
+            return result.ToArray();
+        }
+
 
     }
 

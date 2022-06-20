@@ -40,14 +40,18 @@ Console.WriteLine("Hello, World!");
 
 
 
-LRUCache l = new LRUCache(2);
+/*LRUCache l = new LRUCache(2);
 l.Put(2, 1);
 l.Put(2, 2);
 Console.WriteLine(l.Get(2));
 l.Put(1, 1);
 l.Put(4, 1);
 Console.WriteLine(l.Get(2));
+*/
 
+var result = easy.Intersect(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
+foreach (var r in result)
+    Console.Write(r);
 
 Console.ReadLine();
 
