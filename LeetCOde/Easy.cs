@@ -411,6 +411,30 @@ namespace LeetCOde
             return result.ToArray();
         }
 
+        public char NextGreatestLetter(char[] letters, char target)
+        {
+            var maxmin = '0';
+            var min = letters[0];
+            foreach (var letter in letters)
+            {
+                if (maxmin == '0')
+                {
+                    if (letter > target && letter != target)
+                        maxmin = letter;
+                }
+                else
+                    if (letter < maxmin)
+                    maxmin = letter;
+
+                if (letter < min)
+                    min = letter;
+            }
+
+            if (maxmin == '0') return min;
+            return maxmin;
+
+        }
+
 
     }
 
