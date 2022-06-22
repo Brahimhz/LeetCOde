@@ -453,6 +453,15 @@ namespace LeetCOde
             return listR.ToArray();
         }
 
+        public int SearchInsert(int[] nums, int target)
+        {
+            int i = 0;
+            for (; i < nums.Length; i++)
+                if (nums[i] > target || nums[i] == target) return i;
+
+            return i;
+        }
+
     }
 
     public class ListNode
