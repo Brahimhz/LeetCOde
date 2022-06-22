@@ -435,6 +435,23 @@ namespace LeetCOde
 
         }
 
+        public int[] RelativeSortArray(int[] arr1, int[] arr2)
+        {
+            if (arr1.Length < 2) return arr1;
+
+            var list1 = new List<int>();
+            var listR = new List<int>();
+            list1.AddRange(arr1);
+            foreach (int n in arr2)
+            {
+                var repeat = list1.Count(l => l == n);
+                listR.AddRange(Enumerable.Repeat(n, repeat));
+                list1.RemoveAll(l => l == n);
+            }
+            list1.Sort();
+            listR.AddRange(list1);
+            return listR.ToArray();
+        }
 
     }
 
