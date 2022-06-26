@@ -55,6 +55,11 @@
 
             return result;
         }
+
+        public int FindPeakElement(int[] nums)
+        {
+            return Array.IndexOf(nums, nums.Max());
+        }
     }
 
 
