@@ -500,6 +500,19 @@ namespace LeetCOde
             return Math.Max(1 + MaxDepth(root.left), 1 + MaxDepth(root.right));
         }
 
+        public TreeNode InvertTree(TreeNode root)
+        {
+            if (root == null) return null;
+
+            var left = root.left;
+            root.left = InvertTree(root.right);
+            root.right = InvertTree(left);
+
+            return root;
+
+
+        }
+
     }
 
     public class ListNode
