@@ -49,9 +49,11 @@ l.Put(4, 1);
 Console.WriteLine(l.Get(2));
 */
 
-var result = easy.Intersect(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
+/*var result = easy.Intersect(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
 foreach (var r in result)
-    Console.Write(r);
+    Console.Write(r);*/
+
+Console.WriteLine(medium.MinEatingSpeed(new int[] { 3, 6, 7, 11 }, 8));
 
 Console.ReadLine();
 

@@ -60,6 +60,30 @@
         {
             return Array.IndexOf(nums, nums.Max());
         }
+
+        public int MinEatingSpeed(int[] piles, int h)
+        {
+            int start = 1;
+            int end = piles.Max();
+
+            while (start < end)
+            {
+                int mid = start + (end - start) / 2;
+                if ((VerifyEatingSpeed(piles, h, mid)) == true)
+                    end = mid;
+                else
+                    start = mid + 1;
+            }
+            return end;
+        }
+        private bool VerifyEatingSpeed(int[] piles, int h, int k)
+        {
+            var totalHours = 0;
+            foreach (var p in piles)
+                totalHours += (int)Math.Ceiling((double)p / k);
+
+            return totalHours <= h;
+        }
     }
 
 
