@@ -513,6 +513,39 @@ namespace LeetCOde
 
         }
 
+        public IList<int> InorderTraversal(TreeNode root)
+        {
+            IList<int> result = new List<int>();
+            InorderTraversal(root, result);
+            return result;
+        }
+
+        public void InorderTraversal(TreeNode node, IList<int> result)
+        {
+            if (node == null) return;
+
+            InorderTraversal(node.left, result);
+            result.Add(node.val);
+            InorderTraversal(node.right, result);
+        }
+
+        public TreeNode SortedArrayToBST(int[] nums)
+        {
+            return SortedArraryToBST(nums, 0, nums.Length);
+        }
+
+        private TreeNode SortedArraryToBST(int[] nums, int l, int r)
+        {
+            if (l >= r) return null;
+            var mid = (r - l) / 2 + l;
+
+            var node = new TreeNode(nums[mid]);
+            node.left = SortedArraryToBST(nums, l, mid);
+            node.right = SortedArraryToBST(nums, mid + 1, r);
+            return node;
+        }
+
+
     }
 
     public class ListNode

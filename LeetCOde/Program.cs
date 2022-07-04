@@ -53,7 +53,10 @@ Console.WriteLine(l.Get(2));
 foreach (var r in result)
     Console.Write(r);*/
 
-Console.WriteLine(medium.MinEatingSpeed(new int[] { 3, 6, 7, 11 }, 8));
+//Console.WriteLine(medium.MinEatingSpeed(new int[] { 3, 6, 7, 11 }, 8));
+
+var r = easy.SortedArrayToBST(new int[] { -10, -3, 0, 5, 9 });
+
 
 Console.ReadLine();
 
